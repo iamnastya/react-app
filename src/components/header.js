@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import './Header.css'
+import StripeCheckout from 'react-stripe-checkout'
 
 class Header extends React.Component {
   constructor(props) {
@@ -33,7 +34,11 @@ class Header extends React.Component {
           <Link to="/courses">Courses</Link>
           <Link to="/downloads">Downloads</Link>
           <Link to="/buy">Workshops</Link>
-          <Link to="/courses"><button>Buy</button></Link>
+          <StripeCheckout
+          amount={5000}
+          image="">
+          <button>Buy</button>
+          </StripeCheckout>
         </div>
       </div>
     )
